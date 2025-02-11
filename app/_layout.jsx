@@ -4,6 +4,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import "../global.css";
+import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 SplashScreen.preventAutoHideAsync();
@@ -25,10 +26,13 @@ export default function RootLayout() {
   }
 
   return (
-   <Stack>
-     <Stack.Screen name="index" options={{ headerShown: false }} />
-     <Stack.Screen name="+not-found" />
-   </Stack>
+    <>
+      <StatusBar style="light" backgroundColor='#000'  />
+      <Stack>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="+not-found" />
+      </Stack>
+    </>
 
   );
 }
